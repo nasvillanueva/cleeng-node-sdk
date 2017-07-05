@@ -1,0 +1,5 @@
+/.idea/
+/.gitignore
+/.publishrc
+/package-lock.json
+/yarn.lock
