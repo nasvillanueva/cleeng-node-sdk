@@ -1,6 +1,6 @@
 {
   "name": "cleeng-node-sdk",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Node.js SDK for Cleeng",
   "keywords": [
     "cleeng",
@@ -16,7 +16,8 @@
     "publish-please": "publish-please",
     "prepublish": "publish-please guard"
   },
-  "main": "index.ts",
+  "main": "dist/lib/index.js",
+  "typings": "dist/lib/index.d.ts",
   "author": "Nas Villanueva (https://github.com/nasvillanueva)",
   "license": "MIT",
   "homepage": "https://github.com/nasvillanueva/cleeng-node-sdk",

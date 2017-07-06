@@ -7,6 +7,7 @@
       "es6",
       "dom"
     ],
+    "declaration": true,
     "noImplicitAny": false,
     "sourceMap": true,
     "emitDecoratorMetadata": true,
