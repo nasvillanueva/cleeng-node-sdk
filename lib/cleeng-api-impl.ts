@@ -41,7 +41,10 @@ export default class CleengApiImpl implements CleengApi {
 
 
   public updateSubscriptionOffer(offerData: SubscriptionOfferData, offerId: string): Promise<CleengResponse<OfferResult>> {
-    return rp.post(this.platformUrl, this.buildParam(new CleengRequest('updateSubscriptionOffer', {offerData, offerId}))).promise();
+    return rp.post(this.platformUrl, this.buildParam(new CleengRequest('updateSubscriptionOffer', {
+      offerData,
+      offerId
+    }))).promise();
   }
 
   public createSingleOffer(offerData: SingleOfferData): Promise<CleengResponse<SingleOfferResult>> {
@@ -49,7 +52,10 @@ export default class CleengApiImpl implements CleengApi {
   }
 
   public updateSingleOffer(offerId: string, offerData: SingleOfferData): Promise<CleengResponse<SingleOfferResult>> {
-    return rp.post(this.platformUrl, this.buildParam(new CleengRequest('updateSingleOffer', {offerId, offerData}))).promise();
+    return rp.post(this.platformUrl, this.buildParam(new CleengRequest('updateSingleOffer', {
+      offerData,
+      offerId
+    }))).promise();
   }
 
   public createEventOffer(offerData: EventOfferData): Promise<CleengResponse<EventOfferResult>> {
@@ -57,7 +63,10 @@ export default class CleengApiImpl implements CleengApi {
   }
 
   public updateEventOffer(offerData: EventOfferData, offerId: string): Promise<CleengResponse<EventOfferResult>> {
-    return rp.post(this.platformUrl, this.buildParam(new CleengRequest('updateEventOffer', {offerData, offerId}))).promise();
+    return rp.post(this.platformUrl, this.buildParam(new CleengRequest('updateEventOffer', {
+      offerData,
+      offerId
+    }))).promise();
   }
 
   public createRentalOffer(offerData: RentalOfferData): Promise<CleengResponse<RentalOfferResult>> {
@@ -65,7 +74,10 @@ export default class CleengApiImpl implements CleengApi {
   }
 
   public updateRentalOffer(offerData: RentalOfferData, offerId: string): Promise<CleengResponse<RentalOfferResult>> {
-    return rp.post(this.platformUrl, this.buildParam(new CleengRequest('updateRentalOffer', {offerData, offerId}))).promise();
+    return rp.post(this.platformUrl, this.buildParam(new CleengRequest('updateRentalOffer', {
+      offerData,
+      offerId
+    }))).promise();
   }
 
   public createPassOffer(offerData: PassOfferData): Promise<CleengResponse<PassOfferResult>> {
@@ -73,30 +85,52 @@ export default class CleengApiImpl implements CleengApi {
   }
 
   public updatePassOffer(offerData: PassOfferData, offerId: string): Promise<CleengResponse<OfferResult>> {
-    return rp.post(this.platformUrl, this.buildParam(new CleengRequest('updatePassOffer', {offerData, offerId}))).promise();
+    return rp.post(this.platformUrl, this.buildParam(new CleengRequest('updatePassOffer', {
+      offerData,
+      offerId
+    }))).promise();
   }
 
   public listSubscriptionOffers(criteria: OfferListCriteria, offset: number,
                                 limit: number): Promise<CleengResponse<CleengListResponse<OfferResult>>> {
-    return rp.post(this.platformUrl, this.buildParam(new CleengRequest('listSubscriptionOffers', {criteria, offset, limit}))).promise();
+    return rp.post(this.platformUrl, this.buildParam(new CleengRequest('listSubscriptionOffers', {
+      criteria,
+      limit,
+      offset
+    }))).promise();
   }
 
   public listSingleOffers(criteria: OfferListCriteria, offset: number,
                           limit: number): Promise<CleengResponse<CleengListResponse<SingleOfferResult>>> {
-    return rp.post(this.platformUrl, this.buildParam(new CleengRequest('listSingleOffers', {criteria, offset, limit}))).promise();
+    return rp.post(this.platformUrl, this.buildParam(new CleengRequest('listSingleOffers', {
+      criteria,
+      limit,
+      offset
+    }))).promise();
   }
 
   public listVodOffers(criteria: OfferListCriteria, offset: number, limit: number): Promise<CleengResponse<CleengListResponse<VodOffer>>> {
-    return rp.post(this.platformUrl, this.buildParam(new CleengRequest('listVodOffers', {criteria, offset, limit}))).promise();
+    return rp.post(this.platformUrl, this.buildParam(new CleengRequest('listVodOffers', {
+      criteria,
+      limit,
+      offset
+    }))).promise();
   }
 
   public listPassOffers(criteria: OfferListCriteria, offset: number,
                         limit: number): Promise<CleengResponse<CleengListResponse<PassOfferResult>>> {
-    return rp.post(this.platformUrl, this.buildParam(new CleengRequest('listPassOffers', {criteria, offset, limit}))).promise();
+    return rp.post(this.platformUrl, this.buildParam(new CleengRequest('listPassOffers', {
+      criteria,
+      limit,
+      offset
+    }))).promise();
   }
 
   public prepareRemoteAuth(customerData: CustomerData, flowDescription: FlowDescription): Promise<CleengResponse<PrepareRemoteAuthResult>> {
-    return rp.post(this.platformUrl, this.buildParam(new CleengRequest('prepareRemoteAuth', {customerData, flowDescription}))).promise();
+    return rp.post(this.platformUrl, this.buildParam(new CleengRequest('prepareRemoteAuth', {
+      customerData,
+      flowDescription
+    }))).promise();
   }
 
   public generateCustomerToken(customerEmail: string): Promise<CleengResponse<TokenResult>> {
@@ -134,7 +168,8 @@ export default class CleengApiImpl implements CleengApi {
   }
 
   public getCustomer(customerToken: string): Promise<CleengResponse<GetCustomerResult>> {
-    return rp.post(this.platformUrl, this.buildParam(new CleengRequest('getCustomer', {customerToken}))).promise();
+    return rp.post(this.platformUrl, this.buildParam(new CleengRequest('getCustomer', {customerToken}))).promise()
+        .then((response: Response) => this.handleResponse<CleengResponse<GetCustomerResult>>(response));
   }
 
   public createVodOffer(offerData: VodOfferData): Promise<CleengResponse<VodOfferResult>> {
@@ -146,7 +181,10 @@ export default class CleengApiImpl implements CleengApi {
   }
 
   public updateVodOffer(offerId: string, offerData: VodOfferData): Promise<CleengResponse<VodOfferResult>> {
-    return rp.post(this.platformUrl, this.buildParam(new CleengRequest('updateVodOffer', {offerId, offerData}))).promise();
+    return rp.post(this.platformUrl, this.buildParam(new CleengRequest('updateVodOffer', {
+      offerData,
+      offerId
+    }))).promise();
   }
 
   public generateCheckoutUrl(customerEmail: string, flowDescription: FlowDescription): Promise<CleengResponse<UrlResult>> {
@@ -161,7 +199,10 @@ export default class CleengApiImpl implements CleengApi {
   }
 
   public generateMyAccountUrl(customerEmail: string, modules: string[]): Promise<CleengResponse<UrlResult>> {
-    return rp.post(this.platformUrl, this.buildParam(new CleengRequest('generateMyAccountUrl', {customerEmail, modules}))).promise();
+    return rp.post(this.platformUrl, this.buildParam(new CleengRequest('generateMyAccountUrl', {
+      customerEmail,
+      modules
+    }))).promise();
   }
 
   public listOfferIdsByVideoId(videoId: string): Promise<CleengResponse<ListOfferIdsByVideoIdResult>> {
@@ -178,6 +219,11 @@ export default class CleengApiImpl implements CleengApi {
     const param = {body: body as any, json: true};
     param.body.params.publisherToken = this.publisherToken;
     return param;
+  }
+
+  private handleResponse<T>(response: Response): Promise<T> {
+    console.log(response);
+    return response.json();
   }
 
 
