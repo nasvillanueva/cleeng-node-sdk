@@ -1,6 +1,6 @@
 {
   "name": "cleeng-node-sdk",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "Node.js SDK for Cleeng",
   "keywords": [
     "cleeng",
