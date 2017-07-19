@@ -1,38 +1,38 @@
-import {inject, injectable} from 'inversify';
 import * as rp from 'request-promise-native';
-import {CleengApi} from './interfaces/cleeng-api';
-import BooleanResult from './models/boolean-result.model';
-import CustomerData from './models/customer-data.model';
-import EventOfferData from './models/event-offer-data.model';
-import EventOfferResult from './models/event-offer-result.model';
-import FlowDescription from './models/flow-description.model';
-import GetAccessStatusForDeviceResult from './models/get-access-status-for-device-result.model';
-import GetAccessStatusResult from './models/get-access-status-result.model';
-import GetAccessibleTagsResult from './models/get-accessible-tags-result.model';
-import GetCustomerResult from './models/get-customer-response.model';
-import ListOfferIdsByVideoIdResult from './models/list-offerids-by-videoid-result.model';
-import OfferListCriteria from './models/offer-list-criteria.model';
-import OfferResult from './models/offer-result.model';
-import PassOfferData from './models/pass-offer-data.model';
-import PassOfferResult from './models/pass-offer-result.model';
-import PrepareRemoteAuthResult from './models/prepare-remote-auth-result.model';
-import RentalOfferData from './models/rental-offer-data.model';
-import RentalOfferResult from './models/rental-offer-result.model';
-import SingleOfferData from './models/single-offer-data.model';
-import SingleOfferResult from './models/single-offer-result.model';
-import SubscriptionOfferData from './models/subscription-offer-data.model';
-import CleengListResponse from './models/support/cleeng-list-response.model';
-import CleengRequest from './models/support/cleeng-request.model';
-import CleengResponse from './models/support/cleeng-response.model';
-import TokenResult from './models/token-result.model';
-import UrlResult from './models/url-result.model';
-import VodOfferData from './models/vod-offer-data.model';
-import VodOfferResult from './models/vod-offer-result.model';
-import VodOffer from './models/vod-offer.model';
-@injectable()
+import {CleengApi} from '../cleeng-api';
+import {SubscriptionOfferData,
+  SingleOfferData,
+  EventOfferData,
+  RentalOfferData,
+  PassOfferData,
+  OfferResult,
+  SingleOfferResult,
+  EventOfferResult,
+  CleengResponse,
+  RentalOfferResult,
+  PassOfferResult,
+  OfferListCriteria,
+  CleengListResponse,
+  VodOffer,
+  CustomerData,
+  FlowDescription,
+  PrepareRemoteAuthResult,
+  TokenResult,
+  GetAccessStatusResult,
+  GetAccessibleTagsResult,
+  GetCustomerResult,
+  BooleanResult,
+  VodOfferData,
+  VodOfferResult,
+  UrlResult,
+  ListOfferIdsByVideoIdResult,
+  GetAccessStatusForDeviceResult,
+  CleengRequest
+} from '../models';
+
 export default class CleengApiImpl implements CleengApi {
-  constructor(@inject('platformUrl') private platformUrl: string,
-              @inject('publisherToken') private publisherToken: string) {
+  constructor(private platformUrl: string,
+              private publisherToken: string) {
   }
 
   public createSubscriptionOffer(offerData: SubscriptionOfferData): Promise<CleengResponse<OfferResult>> {

@@ -1,3 +1,3 @@
-export {default as CleengApiImpl} from './cleeng-api-impl';
-export * from './interfaces/cleeng-api';
+export {default as CleengApiImpl} from './impl/cleeng-api-impl';
+export * from './cleeng-api';
 export * from './models';

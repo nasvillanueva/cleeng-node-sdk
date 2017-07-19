@@ -1,30 +1,31 @@
-import SubscriptionOfferData from '../models/subscription-offer-data.model';
-import SingleOfferData from '../models/single-offer-data.model';
-import EventOfferData from '../models/event-offer-data.model';
-import RentalOfferData from '../models/rental-offer-data.model';
-import PassOfferData from '../models/pass-offer-data.model';
-import OfferResult from '../models/offer-result.model';
-import SingleOfferResult from '../models/single-offer-result.model';
-import EventOfferResult from '../models/event-offer-result.model';
-import CleengResponse from '../models/support/cleeng-response.model';
-import RentalOfferResult from '../models/rental-offer-result.model';
-import PassOfferResult from '../models/pass-offer-result.model';
-import OfferListCriteria from '../models/offer-list-criteria.model';
-import CleengListResponse from '../models/support/cleeng-list-response.model';
-import VodOffer from '../models/vod-offer.model';
-import CustomerData from '../models/customer-data.model';
-import FlowDescription from '../models/flow-description.model';
-import PrepareRemoteAuthResult from '../models/prepare-remote-auth-result.model';
-import TokenResult from '../models/token-result.model';
-import GetAccessStatusResult from '../models/get-access-status-result.model';
-import GetAccessibleTagsResult from '../models/get-accessible-tags-result.model';
-import GetCustomerResult from '../models/get-customer-response.model';
-import BooleanResult from '../models/boolean-result.model';
-import VodOfferData from '../models/vod-offer-data.model';
-import VodOfferResult from '../models/vod-offer-result.model';
-import UrlResult from '../models/url-result.model';
-import ListOfferIdsByVideoIdResult from '../models/list-offerids-by-videoid-result.model';
-import GetAccessStatusForDeviceResult from '../models/get-access-status-for-device-result.model';
+import {SubscriptionOfferData,
+  SingleOfferData,
+  EventOfferData,
+  RentalOfferData,
+  PassOfferData,
+  OfferResult,
+  SingleOfferResult,
+  EventOfferResult,
+  CleengResponse,
+  RentalOfferResult,
+  PassOfferResult,
+  OfferListCriteria,
+  CleengListResponse,
+  VodOffer,
+  CustomerData,
+  FlowDescription,
+  PrepareRemoteAuthResult,
+  TokenResult,
+  GetAccessStatusResult,
+  GetAccessibleTagsResult,
+  GetCustomerResult,
+  BooleanResult,
+  VodOfferData,
+  VodOfferResult,
+  UrlResult,
+  ListOfferIdsByVideoIdResult,
+  GetAccessStatusForDeviceResult
+} from './models';
 export interface CleengApi {
   /**
    * Creates a subscription offer.<br/>
