@@ -253,7 +253,7 @@ export default class CleengApiImpl implements CleengApi {
 
   private handleResponse(response: CleengResponse<any>): Promise<CleengResponse<any>> {
     if (response.error) {
-      return Promise.reject(response);
+      return Promise.reject(response.error);
     } else {
       return Promise.resolve(response);
     }
